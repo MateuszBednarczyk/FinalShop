@@ -12,7 +12,6 @@ import java.util.List;
 public class CartService {
 
     private final ProductService productService;
-    private ProfileManager profile;
 
     @Autowired
     public CartService(ProductService productService) {
@@ -20,7 +19,6 @@ public class CartService {
     }
 
     public CartDTO createCart(){
-        System.out.println(profile);
         List<ProductDTO> productList = productService.findAllProducts();
         return new CartDTO(productList);
     }

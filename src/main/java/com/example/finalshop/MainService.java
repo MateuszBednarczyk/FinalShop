@@ -9,14 +9,17 @@ import org.springframework.stereotype.Service;
 public class MainService {
 
     private final CartService cartService;
+    private final ProfileManager activeProfile;
 
-    public MainService(CartService cartService) {
+    public MainService(CartService cartService, ProfileManager activeProfile) {
         this.cartService = cartService;
+        this.activeProfile = activeProfile;
     }
 
     @EventListener(ApplicationReadyEvent.class)
     public void showCart(){
 
+        System.out.println(activeProfile.getProfile());
         System.out.println(cartService.createCart());
 
     }
