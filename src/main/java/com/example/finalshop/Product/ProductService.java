@@ -1,51 +1,17 @@
 package com.example.finalshop.Product;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.stereotype.Service;
-
-import java.util.Arrays;
 import java.util.List;
 
-@Service
-@EnableConfigurationProperties
-@ConfigurationProperties(prefix = "product-service")
-public class ProductService {
+public interface ProductService {
 
-    private double first;
-    private double second;
-    private double third;
+    double getFirst();
+    void setFirst(double value);
 
-    public double getFirst() {
-        return first;
-    }
+    double getSecond();
+    void setSecond(double value);
 
-    public void setFirst(double first) {
-        this.first = first;
-    }
+    double getThird();
+    void setThird(double value);
 
-    public double getSecond() {
-        return second;
-    }
-
-    public void setSecond(double second) {
-        this.second = second;
-    }
-
-    public double getThird() {
-        return third;
-    }
-
-    public void setThird(double third) {
-        this.third = third;
-    }
-
-    public List<ProductDTO> findAllProducts() {
-        return Arrays.asList(
-                new ProductDTO(1,"Tomb Raider",first),
-                new ProductDTO(2,"10000 rp to lol",second),
-                new ProductDTO(3,"2k valorant points",third)
-        );
-    }
-
+    List<ProductDTO> findAllProducts();
 }
