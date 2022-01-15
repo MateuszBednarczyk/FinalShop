@@ -2,7 +2,6 @@ package com.example.finalshop.Cart;
 
 import com.example.finalshop.Product.ProductDTO;
 import com.example.finalshop.Product.ProductService;
-import com.example.finalshop.ProfileManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
