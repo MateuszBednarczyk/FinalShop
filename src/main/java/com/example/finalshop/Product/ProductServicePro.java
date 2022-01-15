@@ -17,6 +17,24 @@ public class ProductServicePro implements ProductService {
     private double first;
     private double second;
     private double third;
+    private double vat;
+    private double special;
+
+    public double getVat() {
+        return vat;
+    }
+
+    public void setVat(double vat) {
+        this.vat = vat;
+    }
+
+    public double getSpecial() {
+        return special;
+    }
+
+    public void setSpecial(double special) {
+        this.special = special;
+    }
 
     public double getFirst() {
         return first;
@@ -44,9 +62,9 @@ public class ProductServicePro implements ProductService {
 
     public List<ProductDTO> findAllProducts() {
         return Arrays.asList(
-                new ProductDTO(1,"Tomb Raider", first),
-                new ProductDTO(2,"10000 rp to lol", second),
-                new ProductDTO(3,"2k valorant points", third)
+                new ProductDTO(1,"Tomb Raider", first*vat*special),
+                new ProductDTO(2,"10000 rp to lol", second*vat*special),
+                new ProductDTO(3,"2k valorant points", third*vat*special)
         );
     }
 
